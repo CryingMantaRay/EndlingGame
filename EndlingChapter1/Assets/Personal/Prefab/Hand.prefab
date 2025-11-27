@@ -134,7 +134,7 @@ MonoBehaviour:
   netTransform: {fileID: 6801964468169763617}
   netAIChance: 0.5
   netRightOffset: 0.1
-  netMoveSpeed: 15
+  netMoveSpeed: 10
   netMoveDelay: 0.4
   hitSplashDuration: 0.2
   grid: {fileID: 0}

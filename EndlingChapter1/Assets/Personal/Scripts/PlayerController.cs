@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator animator;
 
     [SerializeField] float stunDuration = 0.2f;
+    [SerializeField] bool controllable = true;
     float stunTimer;
 
     Vector2 moveInput;
@@ -26,6 +27,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(controllable == false)
+        {
+            moveInput = Vector2.zero;
+            moveVelocity = Vector2.zero;
+            UpdateAnimations();
+            return;
+        }
+
         if (stunTimer > 0f)
         {
             stunTimer -= Time.deltaTime;
@@ -83,5 +92,10 @@ public class PlayerController : MonoBehaviour
     public void TriggerStun()
     {
         stunTimer = stunDuration;
+    }
+
+    public void SetControllable(bool value)
+    {
+        controllable = value;
     }
 }
